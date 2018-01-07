@@ -3,7 +3,7 @@ import React from 'react';
 const Search = ({ handleChange, handleSearch, searchTerm }) => (
   <div id="search">
     <div className="field has-addons has-addons-centered">
-      <div className="control has-icons-left">
+      <div className="control">
         <input
           className="input"
           type="text"

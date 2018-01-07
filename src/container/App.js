@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Header from '../presentational/header';
-import Search from '../presentational/search';
+import Header from '../presentational/Header';
+import Search from '../presentational/Search';
 
 class App extends Component {
   constructor(props) {

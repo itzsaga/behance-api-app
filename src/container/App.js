@@ -21,12 +21,17 @@ class App extends Component {
   handleSearch = (e) => {
     e.preventDefault();
     const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/',
-          targetUrl = `http://api.behance.net/v2/users?q=
-          ${this.state.searchTerm}&client_id=
-          ${process.env.REACT_APP_BEHANCE_API_KEY}`
+          targetUrl = `http://api.behance.net/v2/users?q=${this.state.searchTerm}&client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`
     fetch(proxyUrl + targetUrl)
     .then(r => r.json())
-    .then(json => console.log(json))
+    .then(json => {
+      this.setState({
+        searchResults: json.users
+      })
+    })
+    .catch(err => {
+      console.log(`There was an error searching: ${err}`);
+    })
   }
 
   render() {

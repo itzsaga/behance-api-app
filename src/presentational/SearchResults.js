@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchResults = ({ searchResults }) => {
-  const resultsList = searchResults.map(result => (
+const SearchResults = ({ setViewing, searchResults }) => {
+  const resultsList = searchResults.map((result, i) => (
     <div className="box" key={result.id}>
       <div className="content">
         <p>
@@ -11,7 +11,7 @@ const SearchResults = ({ searchResults }) => {
           {result.company}
         </p>
       </div>
-      <a href={result.url} className="button is-info" target="_blank">More Info</a>
+      <button value={i} onClick={setViewing} className="button is-info">More Info</button>
     </div>
   ));
   return (
@@ -22,7 +22,8 @@ const SearchResults = ({ searchResults }) => {
 };
 
 SearchResults.propTypes = {
-  searchResults: PropTypes.arrayOf(PropTypes.object).isRequired
+  searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setViewing: PropTypes.func.isRequired
 };
 
 export default SearchResults;

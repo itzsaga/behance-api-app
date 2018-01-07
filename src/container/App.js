@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from '../presentational/header';
+import Search from '../presentational/search';
 
 class App extends Component {
   constructor(props) {
@@ -11,15 +12,19 @@ class App extends Component {
     };
   }
 
+  handleChange = (e) => {
+    this.setState({
+      searchTerm: e.target.value
+    });
+  }
+
   render() {
     return (
       <div>
         <header>
           <Header />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Search handleChange={this.handleChange} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
       </div>
     );
   }

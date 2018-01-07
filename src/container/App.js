@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from '../presentational/Header';
 import Search from '../presentational/Search';
+import SearchResults from '../presentational/SearchResults';
 
 class App extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class App extends Component {
           <Header />
         </header>
         <Search handleChange={this.handleChange} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
+        {this.state.searchResults && <SearchResults searchResults={this.state.searchResults} />}
       </div>
     );
   }

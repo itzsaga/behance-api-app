@@ -28,8 +28,8 @@ const Profile = ({ projects, workExperience, followers, following, user }) => (
             <a href={user.url} className="button is-link is-rounded">More info on Behance</a>
           </div>
           <WorkExperience workExperience={workExperience} />
-          <Followers followers={followers} />
           <Following following={following} />
+          <Followers followers={followers} />
         </div>
       </div>
       <div className="column">

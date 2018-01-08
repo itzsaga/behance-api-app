@@ -62,9 +62,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header>
-          <Header />
-        </header>
+        <Header />
         <Search
           handleChange={this.handleChange}
           handleSearch={this.handleSearch}
@@ -76,7 +74,15 @@ class App extends Component {
             setViewing={this.setViewing}
           />
         }
-        {this.state.viewing && <Profile />}
+        {this.state.viewing &&
+          <Profile
+            projects={this.state.userProjects}
+            workExperience={this.state.userWorkExperience}
+            followers={this.state.userFollowers}
+            following={this.state.userFollowing}
+            user={this.state.searchResults[parseInt(this.state.viewing, 10)]}
+          />
+        }
       </div>
     );
   }

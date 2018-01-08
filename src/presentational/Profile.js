@@ -1,5 +1,6 @@
 import React from 'react';
 import WorkExperience from './WorkExperience';
+import Projects from './Projects';
 
 const Profile = ({ projects, workExperience, followers, following, user }) => (
   <div className="tile is-ancestor">
@@ -23,7 +24,7 @@ const Profile = ({ projects, workExperience, followers, following, user }) => (
               <div className="content">
                 {user.sections.Description}
               </div>
-              <a href={user.url}><button className="is-link">More info on Behance</button></a>
+              <a href={user.url} className="button is-link is-rounded">More info on Behance</a>
             </div>
           </div>
         </div>
@@ -31,7 +32,7 @@ const Profile = ({ projects, workExperience, followers, following, user }) => (
           <WorkExperience workExperience={workExperience} />
         </div>
         <div className="tile is-child">
-        Projects list
+          <Projects projects={projects} />
         </div>
       </div>
       <div className="tile is-parent">

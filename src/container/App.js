@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../presentational/Header';
 import Search from '../presentational/Search';
 import SearchResults from '../presentational/SearchResults';
+import apiCalls from '../helpers/apiCalls'
 
 class App extends Component {
   constructor(props) {
@@ -35,10 +36,26 @@ class App extends Component {
       console.log(`There was an error searching: ${err}`);
     })
   }
-  
+
   setViewing = (e) => {
+    this.fetchUserInfo(this.state.searchResults[e.target.value].id)
     this.setState({
       viewing: e.target.value
+    })
+  }
+
+  fetchUserInfo = (userId) => {
+    apiCalls.fetchUserFollowers(userId, this.updateState)
+    apiCalls.fetchUserFollowings(userId, this.updateState)
+    apiCalls.fetchUserInfo(userId, this.updateState)
+    apiCalls.fetchUserProjects(userId, this.updateState)
+    apiCalls.fetchWorkExperience(userId, this.updateState)
+  }
+
+  updateState = (key, value) => {
+    console.log(key, value)
+    this.setState({
+      [key]: value
     })
   }
 
@@ -49,7 +66,12 @@ class App extends Component {
           <Header />
         </header>
         <Search handleChange={this.handleChange} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
-        {this.state.searchResults && !this.state.viewing && <SearchResults searchResults={this.state.searchResults} setViewing={this.setViewing} />}
+        {this.state.searchResults && !this.state.viewing &&
+          <SearchResults 
+            searchResults={this.state.searchResults} 
+            setViewing={this.setViewing}
+          />
+        }
       </div>
     );
   }

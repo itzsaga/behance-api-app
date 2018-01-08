@@ -60,7 +60,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container is-fluid">
         <Header />
         <Search
           handleChange={this.handleChange}

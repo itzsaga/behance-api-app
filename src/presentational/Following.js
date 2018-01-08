@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Followers = ({ followers }) => {
-  const trimmedList = followers.slice(0, 15);
-  const followerList = trimmedList.map(user =>
+const Following = ({ following }) => {
+  const trimmedList = following.slice(0, 15);
+  const followingList = trimmedList.map(user =>
     (<div className="content" key={user.id}>
       <p className="title is-4">{user.display_name}</p>
       <p className="subtitle is-6">{user.occupation}<br />
@@ -13,11 +13,11 @@ const Followers = ({ followers }) => {
   return (
     <div className="card">
       <div className="card-content">
-        <p className="title">Followers:</p>
-        { followerList }
+        <p className="title">Following:</p>
+        { followingList }
       </div>
     </div>
   );
 };
 
-export default Followers;
+export default Following;

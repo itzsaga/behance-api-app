@@ -16,6 +16,13 @@ class App extends Component {
     };
   }
 
+  setViewing = (e) => {
+    this.fetchUserInfo(this.state.searchResults[e.target.value].id);
+    this.setState({
+      viewing: e.target.value
+    });
+  }
+
   handleChange = (e) => {
     this.setState({
       searchTerm: e.target.value
@@ -24,39 +31,32 @@ class App extends Component {
 
   handleSearch = (e) => {
     e.preventDefault();
-    const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/',
-          targetUrl = `https://api.behance.net/v2/users?q=${this.state.searchTerm}&client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`
+    const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
+    const targetUrl = `https://api.behance.net/v2/users?q=${this.state.searchTerm}&client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
     fetch(proxyUrl + targetUrl)
-    .then(r => r.json())
-    .then(json => {
-      this.setState({
-        searchResults: json.users
+      .then(r => r.json())
+      .then((json) => {
+        this.setState({
+          searchResults: json.users
+        });
       })
-    })
-    .catch(err => {
-      console.log(`There was an error searching: ${err}`);
-    })
-  }
-
-  setViewing = (e) => {
-    this.fetchUserInfo(this.state.searchResults[e.target.value].id)
-    this.setState({
-      viewing: e.target.value
-    })
+      .catch((err) => {
+        console.log(`There was an error searching: ${err}`);
+      });
   }
 
   fetchUserInfo = (userId) => {
-    apiCalls.fetchUserFollowers(userId, this.updateState)
-    apiCalls.fetchUserFollowings(userId, this.updateState)
-    apiCalls.fetchUserInfo(userId, this.updateState)
-    apiCalls.fetchUserProjects(userId, this.updateState)
-    apiCalls.fetchWorkExperience(userId, this.updateState)
+    apiCalls.fetchUserFollowers(userId, this.updateState);
+    apiCalls.fetchUserFollowings(userId, this.updateState);
+    apiCalls.fetchUserInfo(userId, this.updateState);
+    apiCalls.fetchUserProjects(userId, this.updateState);
+    apiCalls.fetchWorkExperience(userId, this.updateState);
   }
 
   updateState = (key, value) => {
     this.setState({
       [key]: value
-    })
+    });
   }
 
   render() {
@@ -65,14 +65,14 @@ class App extends Component {
         <header>
           <Header />
         </header>
-        <Search 
+        <Search
           handleChange={this.handleChange}
           handleSearch={this.handleSearch}
           searchTerm={this.state.searchTerm}
         />
         {this.state.searchResults && !this.state.viewing &&
-          <SearchResults 
-            searchResults={this.state.searchResults} 
+          <SearchResults
+            searchResults={this.state.searchResults}
             setViewing={this.setViewing}
           />
         }

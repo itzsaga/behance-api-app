@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 import Header from '../presentational/Header';
+import Profile from '../presentational/Profile';
 import Search from '../presentational/Search';
 import SearchResults from '../presentational/SearchResults';
-import apiCalls from '../helpers/apiCalls'
+import apiCalls from '../helpers/apiCalls';
 
 class App extends Component {
   constructor(props) {
@@ -65,13 +66,18 @@ class App extends Component {
         <header>
           <Header />
         </header>
-        <Search handleChange={this.handleChange} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm} />
+        <Search 
+          handleChange={this.handleChange}
+          handleSearch={this.handleSearch}
+          searchTerm={this.state.searchTerm}
+        />
         {this.state.searchResults && !this.state.viewing &&
           <SearchResults 
             searchResults={this.state.searchResults} 
             setViewing={this.setViewing}
           />
         }
+        {this.state.viewing && <Profile />}
       </div>
     );
   }

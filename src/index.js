@@ -4,7 +4,6 @@ import 'bulma/css/bulma.css';
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Router, Route } from 'react-router-dom';
 
 // Components
 import App from './container/App';
@@ -13,9 +12,7 @@ import App from './container/App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <App />,
   document.getElementById('root') // eslint-disable-line
 );
 

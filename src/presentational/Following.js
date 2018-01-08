@@ -1,15 +1,17 @@
 import React from 'react';
 
 const Following = ({ following }) => {
-  const trimmedList = following.slice(0, 5);
+  const trimmedList = following.slice(0, 10);
   const followingList = trimmedList.map(user =>
-    (<div className="content" key={user.id}>
-      <p className="title is-4">{user.display_name}</p>
-      <p className="subtitle is-6">{user.occupation}<br />
-        {user.company ? `${user.company} <br/ >` : null}
-        {user.location ? user.location : null}
-      </p>
-    </div>));
+    (user.display_name ?
+      (<div className="box" key={user.id}>
+        <div className="content">
+          {user.display_name ? <h2>{user.display_name}</h2> : null}
+          {user.occupation ? <p> {user.occupation} </p> : null}
+          {user.company ? <p> {user.company} </p> : null}
+          {user.location ? <p> {user.location} </p> : null}
+        </div>
+      </div>) : null));
   return (
     <div className="card">
       <div className="card-content">

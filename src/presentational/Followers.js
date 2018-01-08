@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Followers = ({ followers }) => {
-  const trimmedList = followers.slice(0, 15);
+  const trimmedList = followers.slice(0, 5);
   const followerList = trimmedList.map(user =>
     (<div className="content" key={user.id}>
       <p className="title is-4">{user.display_name}</p>
@@ -13,7 +13,7 @@ const Followers = ({ followers }) => {
   return (
     <div className="card">
       <div className="card-content">
-        <p className="title">Followers:</p>
+        <p className="title">Followers</p>
         { followerList }
       </div>
     </div>

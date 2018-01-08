@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Projects = ({ projects }) => {
-  const projectList = projects.map(project =>
+  const trimmedList = projects.slice(0, 10);
+  const projectList = trimmedList.map(project =>
     (<div className="media" key={project.id}>
       <div className="media-left">
         <figure className="image is-128x128">

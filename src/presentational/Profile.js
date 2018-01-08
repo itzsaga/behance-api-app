@@ -1,6 +1,7 @@
 import React from 'react';
 import WorkExperience from './WorkExperience';
 import Projects from './Projects';
+import Followers from './Followers';
 
 const Profile = ({ projects, workExperience, followers, following, user }) => (
   <div className="tile is-ancestor">
@@ -35,7 +36,7 @@ const Profile = ({ projects, workExperience, followers, following, user }) => (
         </div>
         <div className="tile is-child">
           <div className="card">
-            Followers
+            <Followers followers={followers} />
           </div>
         </div>
         <div className="tile is-child">

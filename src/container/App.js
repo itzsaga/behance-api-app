@@ -80,7 +80,7 @@ class App extends Component {
             workExperience={this.state.userWorkExperience}
             followers={this.state.userFollowers}
             following={this.state.userFollowing}
-            user={this.state.searchResults[parseInt(this.state.viewing, 10)]}
+            user={this.state.userInfo}
           />
         }
       </div>

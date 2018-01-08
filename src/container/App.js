@@ -54,7 +54,6 @@ class App extends Component {
   }
 
   updateState = (key, value) => {
-    console.log(key, value)
     this.setState({
       [key]: value
     })

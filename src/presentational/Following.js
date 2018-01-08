@@ -6,8 +6,8 @@ const Following = ({ following }) => {
     (<div className="content" key={user.id}>
       <p className="title is-4">{user.display_name}</p>
       <p className="subtitle is-6">{user.occupation}<br />
-        {user.company}<br />
-        {user.location}
+        {user.company ? `${user.company} <br/ >` : null}
+        {user.location ? user.location : null}
       </p>
     </div>));
   return (

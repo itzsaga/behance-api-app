@@ -1,7 +1,6 @@
 const fetchUserInfo = (id, updateState) => {
-  const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
   const targetUrl = `https://api.behance.net/v2/users/${id}?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(proxyUrl + targetUrl)
+  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userInfo', json.user);
@@ -12,9 +11,8 @@ const fetchUserInfo = (id, updateState) => {
 };
 
 const fetchUserProjects = (id, updateState) => {
-  const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
   const targetUrl = `https://api.behance.net/v2/users/${id}/projects?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(proxyUrl + targetUrl)
+  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userProjects', json.projects);
@@ -25,9 +23,8 @@ const fetchUserProjects = (id, updateState) => {
 };
 
 const fetchUserFollowers = (id, updateState) => {
-  const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
   const targetUrl = `https://api.behance.net/v2/users/${id}/followers?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(proxyUrl + targetUrl)
+  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userFollowers', json.followers);
@@ -38,9 +35,8 @@ const fetchUserFollowers = (id, updateState) => {
 };
 
 const fetchUserFollowings = (id, updateState) => {
-  const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
   const targetUrl = `https://api.behance.net/v2/users/${id}/following?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(proxyUrl + targetUrl)
+  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userFollowing', json.following);
@@ -51,9 +47,8 @@ const fetchUserFollowings = (id, updateState) => {
 };
 
 const fetchWorkExperience = (id, updateState) => {
-  const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
   const targetUrl = `https://api.behance.net/v2/users/${id}/work_experience?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(proxyUrl + targetUrl)
+  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userWorkExperience', json.work_experience);

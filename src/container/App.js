@@ -31,9 +31,8 @@ class App extends Component {
 
   handleSearch = (e) => {
     e.preventDefault();
-    const proxyUrl = 'https://seth-behance-proxy.herokuapp.com/';
     const targetUrl = `https://api.behance.net/v2/users?q=${this.state.searchTerm}&client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-    fetch(proxyUrl + targetUrl)
+    fetch(process.env.REACT_PROXY_SERVER + targetUrl)
       .then(r => r.json())
       .then((json) => {
         this.setState({
@@ -74,7 +73,7 @@ class App extends Component {
             setViewing={this.setViewing}
           />
         }
-        {this.state.viewing &&
+        {this.state.viewing && this.state.userProjects && this.state.userWorkExperience && this.state.userFollowers && this.state.userFollowing && this.state.userInfo &&
           <Profile
             projects={this.state.userProjects}
             workExperience={this.state.userWorkExperience}

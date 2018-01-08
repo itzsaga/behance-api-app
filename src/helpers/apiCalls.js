@@ -1,6 +1,6 @@
 const fetchUserInfo = (id, updateState) => {
   const targetUrl = `https://api.behance.net/v2/users/${id}?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
+  fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userInfo', json.user);
@@ -12,7 +12,7 @@ const fetchUserInfo = (id, updateState) => {
 
 const fetchUserProjects = (id, updateState) => {
   const targetUrl = `https://api.behance.net/v2/users/${id}/projects?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
+  fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userProjects', json.projects);
@@ -24,7 +24,7 @@ const fetchUserProjects = (id, updateState) => {
 
 const fetchUserFollowers = (id, updateState) => {
   const targetUrl = `https://api.behance.net/v2/users/${id}/followers?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
+  fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userFollowers', json.followers);
@@ -36,7 +36,7 @@ const fetchUserFollowers = (id, updateState) => {
 
 const fetchUserFollowings = (id, updateState) => {
   const targetUrl = `https://api.behance.net/v2/users/${id}/following?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
+  fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userFollowing', json.following);
@@ -48,7 +48,7 @@ const fetchUserFollowings = (id, updateState) => {
 
 const fetchWorkExperience = (id, updateState) => {
   const targetUrl = `https://api.behance.net/v2/users/${id}/work_experience?client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-  fetch(process.env.REACT_PROXY_SERVER + targetUrl)
+  fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
     .then(r => r.json())
     .then((json) => {
       updateState('userWorkExperience', json.work_experience);

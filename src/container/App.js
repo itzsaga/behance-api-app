@@ -32,7 +32,7 @@ class App extends Component {
   handleSearch = (e) => {
     e.preventDefault();
     const targetUrl = `https://api.behance.net/v2/users?q=${this.state.searchTerm}&client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
-    fetch(process.env.REACT_PROXY_SERVER + targetUrl)
+    fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
       .then(r => r.json())
       .then((json) => {
         this.setState({

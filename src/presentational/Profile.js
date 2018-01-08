@@ -4,8 +4,8 @@ import Projects from './Projects';
 
 const Profile = ({ projects, workExperience, followers, following, user }) => (
   <div className="tile is-ancestor">
-    <div className="tile is-vertical">
-      <div className="tile is-parent">
+    <div className="tile is-vertical is-4">
+      <div className="tile is-parent is-vertical">
         <div className="tile is-child">
           <div className="card">
             <div className="card-image">
@@ -29,18 +29,26 @@ const Profile = ({ projects, workExperience, followers, following, user }) => (
           </div>
         </div>
         <div className="tile is-child">
-          <WorkExperience workExperience={workExperience} />
+          <div className="card">
+            <WorkExperience workExperience={workExperience} />
+          </div>
         </div>
         <div className="tile is-child">
-          <Projects projects={projects} />
+          <div className="card">
+            Followers
+          </div>
+        </div>
+        <div className="tile is-child">
+          <div className="card">
+            Following
+          </div>
         </div>
       </div>
-      <div className="tile is-parent">
+    </div>
+    <div className="tile is-vertical">
+      <div className="tile is-parent is-vertical">
         <div className="tile is-child">
-        Followers
-        </div>
-        <div className="tile is-child">
-        Following
+          <Projects projects={projects} />
         </div>
       </div>
     </div>

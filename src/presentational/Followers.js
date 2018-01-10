@@ -3,8 +3,8 @@ import React from 'react';
 const Followers = ({ followers }) => {
   const trimmedList = followers.slice(0, 10);
   const followerList = trimmedList.map(user =>
-    (user.display_name ?
-      (<div className="box" key={user.id}>
+    (user.display_name ? (
+      <div className="box" key={user.id}>
         <div className="content">
           {user.display_name ? <h2> {user.display_name} </h2> : null}
           {user.occupation ? <p> {user.occupation} </p> : null}

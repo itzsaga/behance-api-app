@@ -4,6 +4,7 @@ import Projects from './Projects';
 import Followers from './Followers';
 import Following from './Following';
 
+// eslint-disable-next-line
 const Profile = ({ projects, workExperience, followers, following, resetViewing, user }) => (
   <div className="container is-fluid">
     <div className="columns">

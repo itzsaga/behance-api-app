@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import WorkExperience from './WorkExperience';
+import Profile from '../presentational/Profile';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<WorkExperience />, div);
+  ReactDOM.render(<Profile />, div);
 });

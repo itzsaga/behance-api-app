@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Following from './Following';
+import App from '../container/App';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Following />, div);
+  ReactDOM.render(<App />, div);
 });

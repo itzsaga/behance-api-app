@@ -19,7 +19,7 @@ const Projects = ({ resetViewing, projects }) => {
   return (
     <div className="card">
       <div className="card-content">
-        <p className="title">Projects <span className="delete is-large is-pulled-right" onClick={resetViewing}/></p>
+        <p className="title">Projects <span className="delete is-large is-pulled-right" onClick={resetViewing} role="button" tabIndex="0" onKeyUp={resetViewing} /></p>
         {projectList}
       </div>
     </div>

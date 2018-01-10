@@ -9,7 +9,7 @@
     ```
 3.  Install your dependencies  
     ```shell
-    cd path/to/js-behance-api
+    cd path/to/js-behance-api  
     yarn
     ```
 4.  Copy `.env.example` to `.env` and fill out the values.  

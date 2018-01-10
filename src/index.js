@@ -1,9 +1,9 @@
-// Bulma & any other CSS
-import 'bulma/css/bulma.css';
-
 // React
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// CSS
+import './styles/css.css';
 
 // Components
 import App from './container/App';

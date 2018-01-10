@@ -1,0 +1,21 @@
+@import '../../node_modules/bulma/css/bulma.css';
+
+body {
+  background: offwhite;
+}
+
+.container {
+  padding: 0 1em;
+}
+
+#more-info-button {
+  padding: 1em 0 0 0;
+}
+
+#search {
+  padding: 0 0 1em 0;
+}
+
+#site-title {
+  padding: 1em;
+}

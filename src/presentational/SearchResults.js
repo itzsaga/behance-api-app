@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const SearchResults = ({ setViewing, searchResults }) => {
   const resultsList = searchResults.map((result, i) => (
@@ -25,11 +24,6 @@ const SearchResults = ({ setViewing, searchResults }) => {
       {resultsList}
     </div>
   );
-};
-
-SearchResults.propTypes = {
-  searchResults: PropTypes.arrayOf(PropTypes.object).isRequired,
-  setViewing: PropTypes.func.isRequired
 };
 
 export default SearchResults;

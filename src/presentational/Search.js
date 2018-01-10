@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Search = ({ handleChange, handleSearch, searchTerm }) => (
   <div id="search">
@@ -14,18 +13,12 @@ const Search = ({ handleChange, handleSearch, searchTerm }) => (
         />
       </div>
       <div className="control">
-        <a className="button is-primary" onClick={handleSearch} >
+        <button className="button is-primary" onClick={handleSearch} >
           Search
-        </a>
+        </button>
       </div>
     </div>
   </div>
 );
-
-Search.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  handleSearch: PropTypes.func.isRequired,
-  searchTerm: PropTypes.string.isRequired
-};
 
 export default Search;

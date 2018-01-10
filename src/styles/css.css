@@ -8,6 +8,10 @@ body {
   padding: 0 1em;
 }
 
+.delete {
+  color: red;
+}
+
 #more-info-button {
   padding: 1em 0 0 0;
 }

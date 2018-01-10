@@ -4,19 +4,19 @@
 
 1.  Make sure you have [NodeJS](https://nodejs.org/) and [Yarn](https://yarnpkg.com) installed.  
 2.  Clone the repository
-    ```shell
-    git clone git@bitbucket.org:sethalexander/js-behance-api.git
-    ```
+  ```shell
+  git clone git@bitbucket.org:sethalexander/js-behance-api.git
+  ```
 3.  Install your dependencies  
-    ```shell
-    cd path/to/js-behance-api  
-    yarn
-    ```
+  ```shell
+  cd path/to/js-behance-api
+  yarn
+  ```
 4.  Copy `.env.example` to `.env` and fill out the values.  
 5.  Start the app  
-    ```shell
-    yarn start
-    ```
+  ```shell
+  yarn start
+  ```
 6.  Once you see `Compiled successfully!` in the console, you can View the running app at [http://localhost:3000](http://localhost:3000)
 
 ## Testing ##

@@ -4,7 +4,7 @@ import Projects from './Projects';
 import Followers from './Followers';
 import Following from './Following';
 
-const Profile = ({ projects, workExperience, followers, following, user }) => (
+const Profile = ({ projects, workExperience, followers, following, handleClose, user }) => (
   <div className="container is-fluid">
     <div className="columns">
       <div className="column is-4">
@@ -33,7 +33,7 @@ const Profile = ({ projects, workExperience, followers, following, user }) => (
         </div>
       </div>
       <div className="column">
-        <Projects projects={projects} />
+        <Projects projects={projects} handleClose={handleClose} />
       </div>
     </div>
   </div>

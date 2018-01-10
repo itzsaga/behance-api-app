@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Projects = ({ projects }) => {
+const Projects = ({ handleClose, projects }) => {
   const projectList = projects.map(project => (
-    <div className="box">
-      <div className="media" key={project.id}>
+    <div className="box" key={project.id}>
+      <div className="media">
         <div className="media-left">
           <figure className="image is-128x128">
             <img src={project.covers[404]} alt="Project cover" />
@@ -19,8 +19,8 @@ const Projects = ({ projects }) => {
   return (
     <div className="card">
       <div className="card-content">
-        <p className="title">Projects</p>
-        { projectList }
+        <p className="title">Projects <span className="delete is-large is-pulled-right" onClick={handleClose}/></p>
+        {projectList}
       </div>
     </div>
   );

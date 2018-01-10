@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Projects = ({ handleClose, projects }) => {
+const Projects = ({ resetViewing, projects }) => {
   const projectList = projects.map(project => (
     <div className="box" key={project.id}>
       <div className="media">
@@ -19,7 +19,7 @@ const Projects = ({ handleClose, projects }) => {
   return (
     <div className="card">
       <div className="card-content">
-        <p className="title">Projects <span className="delete is-large is-pulled-right" onClick={handleClose}/></p>
+        <p className="title">Projects <span className="delete is-large is-pulled-right" onClick={resetViewing}/></p>
         {projectList}
       </div>
     </div>

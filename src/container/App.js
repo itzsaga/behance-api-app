@@ -29,12 +29,20 @@ class App extends Component {
     });
   }
 
-  handleClose = () => {
+  resetViewing = () => {
     this.setState({ viewing: '' });
+  }
+
+  resetSearchResults = () => {
+    this.setState({
+      searchResults: '',
+      viewing: ''
+    });
   }
 
   handleSearch = (e) => {
     e.preventDefault();
+    this.resetSearchResults();
     const targetUrl = `https://api.behance.net/v2/users?q=${this.state.searchTerm}&client_id=${process.env.REACT_APP_BEHANCE_API_KEY}`;
     fetch(process.env.REACT_APP_PROXY_SERVER + targetUrl)
       .then(r => r.json())
@@ -84,7 +92,7 @@ class App extends Component {
             followers={this.state.userFollowers}
             following={this.state.userFollowing}
             user={this.state.userInfo}
-            handleClose={this.handleClose}
+            resetViewing={this.resetViewing}
           />
         }
       </div>

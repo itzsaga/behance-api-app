@@ -19,6 +19,11 @@ class App extends Component {
   setViewing = (e) => {
     this.fetchUserInfo(this.state.searchResults[e.target.value].id);
     this.setState({
+      userFollowers: '',
+      userFollowing: '',
+      userInfo: '',
+      userProjects: '',
+      userWorkExperience: '',
       viewing: e.target.value
     });
   }
